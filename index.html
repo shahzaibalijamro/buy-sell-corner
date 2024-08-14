@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy/sell corner</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white">
+    <div class="navbar bg-[#4c68ff] bg-base-100">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-white text-xl">Buy/Sell Corner</a>
+        </div>
+        <div class="flex-none gap-2">
+            <div class="form-control">
+                <input type="text" placeholder="Search"
+                    class="input h-[2.6rem] bg-white input-bordered w-24 md:w-auto" />
+            </div>
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img alt="Tailwind CSS Navbar component"
+                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                    </div>
+                </div>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    <li>
+                        <a class="justify-between">
+                            Profile
+                            <span class="badge">New</span>
+                        </a>
+                    </li>
+                    <li><a>Settings</a></li>
+                    <li><a>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="p-5">
+        <div class="bg-[#FFF6F6] my-container p-[2.25rem]">
+            <div class="flex justify-center">
+                <div class="group">
+                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                        <g>
+                            <path
+                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                            </path>
+                        </g>
+                    </svg>
+                    <input placeholder="Search" type="search" class="input-search">
+                </div>
+            </div>
+            <div class="my-container-2">
+                <h1 class="products-heading">Products</h1>
+                <div class="flex justify-center flex-wrap gap-7">
+                    <div class="card bg-base-100 w-[18rem] shadow-xl">
+                        <figure>
+                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                alt="Shoes" />
+                        </figure>
+                        <div class="card-body bg-white text-black p-[1.5rem]">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-sm btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-[18rem] shadow-xl">
+                        <figure>
+                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                alt="Shoes" />
+                        </figure>
+                        <div class="card-body p-[1.5rem]">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-sm btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-[18rem] shadow-xl">
+                        <figure>
+                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                alt="Shoes" />
+                        </figure>
+                        <div class="card-body p-[1.5rem]">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-sm btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-[18rem] shadow-xl">
+                        <figure>
+                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                alt="Shoes" />
+                        </figure>
+                        <div class="card-body p-[1.5rem]">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-sm btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-[18rem] shadow-xl">
+                        <figure>
+                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                alt="Shoes" />
+                        </figure>
+                        <div class="card-body p-[1.5rem]">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-sm btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-[18rem] shadow-xl">
+                        <figure>
+                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                alt="Shoes" />
+                        </figure>
+                        <div class="card-body p-[1.5rem]">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-sm btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-[18rem] shadow-xl">
+                        <figure>
+                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                alt="Shoes" />
+                        </figure>
+                        <div class="card-body p-[1.5rem]">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-sm btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 w-[18rem] shadow-xl">
+                        <figure>
+                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                alt="Shoes" />
+                        </figure>
+                        <div class="card-body p-[1.5rem]">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-sm btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./app/app.js"></script>
+    <script src="https://kit.fontawesome.com/e686848577.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
