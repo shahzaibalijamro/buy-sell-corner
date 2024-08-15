@@ -1,0 +1,22 @@
+.navbar{
+    position: fixed !important;
+    top: 0 !important;
+}
+
+.my-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.input:focus, .input:focus-within {
+    box-shadow: none !important;
+    border-color: #4c68ff !important;
+    outline-style: solid !important;
+    outline-width: 1px !important;
+    outline-offset: 0px !important;
+    outline-color: #4c68ff !important;
+}
+
+.input-bordered {
+    border-color: #00000052 !important;
+}
