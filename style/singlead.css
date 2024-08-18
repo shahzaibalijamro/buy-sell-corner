@@ -18,7 +18,7 @@
     line-height: 28px !important;
     align-items: center !important;
     position: relative !important;
-    max-width: 1200px !important;
+    /* max-width: 1200px !important; */
     width: 100% !important;
     border: 2px solid #A1A1A1;
     border-radius: 8px;
