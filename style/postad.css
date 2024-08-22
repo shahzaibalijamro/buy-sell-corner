@@ -5,7 +5,7 @@
 
 .my-container {
     max-width: 1300px;
-    margin: 3.5rem auto 1rem auto;
+    margin: 1rem auto 1rem auto;
 }
 
 .input:focus, .input:focus-within {
@@ -19,4 +19,10 @@
 
 .input-bordered {
     border-color: #00000052 !important;
+}
+
+.btn-postad:hover{
+    background-color: white !important;
+    color: #4c68ff !important;
+    border-color: #4c68ff !important;
 }

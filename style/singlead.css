@@ -88,7 +88,40 @@ input:hover {
     .ad-data{
         flex-wrap: wrap !important;
     }
+    .ad-image{
+        margin: 0 auto;
+        width: 13rem !important;
+        border-radius: 0px !important;
+    }
     .image-wrapper{
+        background-color: white;
+        width: 100% !important;
+        border: 1px solid #a1a1a1;
         max-width: 100% !important;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+}
+
+@media(max-width:448px){
+    .wrap-at-428{
+        flex-wrap: wrap;
+        margin-top: 1rem !important;
+    }
+    .area-wrapper{
+        justify-content: center !important;
+        margin-top: 10px !important;
+    }
+    .avatar-in{
+        width: 4rem !important;
+    }
+    .pad-1-rem{
+        padding: 1rem !important;
+    }
+    .mt-1-rem{
+        margin-top: 1rem !important;
+    }
+    .pad-1-5-rem{
+        padding: 1.25rem !important;
     }
 }
