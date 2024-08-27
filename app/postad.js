@@ -1,15 +1,15 @@
 //  Import Section
 import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import { auth, db } from "../config.js";
-import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { collection, query, where, getDocs, doc, setDoc, addDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { uploadBytes, getDownloadURL, ref, getStorage } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js";
 
-
-
-//  Calling document
+//  constants and variables
 const logoutBtn = document.querySelector("#logoutBtn");
 const pfp = document.querySelector("#pfp");
 let userDataArr = [];
 const form = document.querySelector("#form");
+const btnPostad = document.querySelector(".btn-postad");
 const productPic = document.querySelector("#productPic");
 const productTitle = document.querySelector("#productTitle");
 const productDescription = document.querySelector("#productDescription");
@@ -18,7 +18,8 @@ const sellerName = document.querySelector("#sellerName");
 const sellerAddress = document.querySelector("#sellerAddress");
 const sellerNumber = document.querySelector("#sellerNumber");
 const uploadText = document.querySelector('#uploadText');
-
+const storage = getStorage();
+let url = "";
 
 
 //  Check user status
@@ -38,15 +39,24 @@ onAuthStateChanged(auth, async (user) => {
 
 
 
-form.addEventListener("submit", event => {
+form.addEventListener("submit", async event => {
     event.preventDefault();
-    console.log(productPic.files[0]);
-    console.log(productTitle.value);
-    console.log(productDescription.value);
-    console.log(productPrice.value);
-    console.log(sellerName.value);
-    console.log(sellerAddress.value);
-    console.log(sellerNumber.value);
+    btnPostad.innerHTML = `posting <span class="loading loading-dots loading-md"></span>`
+    const adImg = productPic.files[0];
+    if (adImg) {
+        url = await uploadFile(adImg, `${productTitle.value} + ${Date.now()}`);
+    }
+    const adPost = await addDoc(collection(db, "ad"), {
+        productTitle: productTitle.value,
+        productDescription: productDescription.value,
+        productPrice: productPrice.value,
+        productPic: url,
+        sellerName: sellerName.value,
+        sellerAddress: sellerAddress.value,
+        sellerNumber: sellerNumber.value,
+    });
+    console.log("Document written with ID: ", adPost.id);
+    btnPostad.innerHTML = `Post Now`
 })
 
 
@@ -78,3 +88,17 @@ function fixFileName() {
     });
 }
 fixFileName();
+
+
+// converting file into Url
+async function uploadFile(file, userEmail) {
+    const storageRef = ref(storage, userEmail);
+    try {
+        const uploadImg = await uploadBytes(storageRef, file);
+        const url = await getDownloadURL(uploadImg.ref);
+        return url;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
