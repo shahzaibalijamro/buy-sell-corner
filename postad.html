@@ -16,23 +16,17 @@
             <a href="index.html" class="btn btn-ghost text-white text-xl"><i style="font-size: 14px;" class="fa-solid mt-[0.3rem] fa-chevron-left"></i>Back to Home</a>
         </div>
         <div class="flex-none gap-2">
-            <div class="form-control">
-                <input type="text" placeholder="Search"
-                    class="input h-[2.6rem] bg-white input-bordered w-24 md:w-auto" />
-            </div>
             <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                     <div class="w-10 rounded-full">
-                        <img alt="Tailwind CSS Navbar component"
-                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        <img id="pfp" alt="Tailwind CSS Navbar component"
+                            src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" />
                     </div>
                 </div>
                 <ul tabindex="0"
                     class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
-                    <li><a href="postad.html">Post an add</a></li>
-                    <li><a href="login.html">Login</a></li>
                     <li><a>My wishlists</a></li>
-                    <li><a>Logout</a></li>
+                    <li id="logoutBtn"><a>Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -40,30 +34,32 @@
     <div class="h-[100vh] flex my-container justify-center p-5 items-center z-10 relative">
         <div class="w-[100%]">
             <h1 class="text-3xl text-center font-semibold text-black mb-5">Post Ad</h1>
-            <div class="">
+            <form id="form">
                 <div class="flex bg-[#4c68ff] relative p-5 mb-4 justify-center items-center flex-col">
                     <div class="text-center">
                         <i class="fa-regular text-[5.5rem] text-white fa-square-plus"></i>
                     </div>
-                    <h1 class="text-[1.4rem] text-center text-white">Upload Product Photo</h1>
-                    <input type="file" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer" />
+                    <h1 id="uploadText" class="text-[1.4rem] text-center text-white">Upload Product Photo</h1>
+                    <input id="productPic" type="file" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer" />
                 </div>
-                <form>
-                    <input type="text" placeholder="Product title"
+                <div>
+                    <input id="productTitle" type="text" placeholder="Product title"
                         class="input bg-white input-bordered w-[100%]" />
-                    <input type="text" placeholder="Product description"
+                    <input id="productDescription" type="text" placeholder="Product description"
                         class="input mt-3 bg-white input-bordered w-[100%]" />
-                    <input type="text" placeholder="Product price"
+                    <input id="productPrice" type="text" placeholder="Product price"
                         class="input mt-3 bg-white input-bordered w-[100%]" />
-                    <input type="text" placeholder="Enter your name"
+                    <input id="sellerName" type="text" placeholder="Enter your name"
                         class="input mt-5 bg-white rounded-tl-lg rounded-tr-lg rounded-none input-bordered w-[100%]" />
-                    <input type="text" placeholder="Enter your number"
+                    <input id="sellerAddress" type="text" placeholder="Enter your address"
+                        class="input bg-white border-y-[0px] rounded-none input-bordered w-[100%]" />
+                    <input id="sellerNumber" type="number" placeholder="Enter your phone number"
                         class="input bg-white rounded-bl-lg rounded-br-lg rounded-none input-bordered w-[100%]" />
                     <div class="text-end">
                         <button class="btn btn-postad bg-[#4c68ff] mt-[1.5rem] text-white border-[#4c68ff]">Post Now</button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
     <script type="module" src="./app/postad.js"></script>
