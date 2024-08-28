@@ -24,20 +24,27 @@ function renderData() {
     cardWrapper.innerHTML = "";
     adArr.map((item,index) => {
         cardWrapper.innerHTML += `
-        <div class="card bg-base-100 w-[18rem] shadow-xl">
-                        <figure class="image-container">
+        <div id="card" class="card border-none bg-base-100 w-[18rem] shadow-xl">
+                        <figure class="image-container border-none">
                             <img src=${item.productPic} alt="${item.productTitle}"/>
                         </figure>
                         <div class="card-body bg-white text-black p-[1.5rem]">
                             <h2 class="card-title">${item.productTitle}</h2>
                             <p>${item.productDescription}</p>
                             <div class="card-actions justify-between mt-3 items-center">
-                                <h1 class="text-lg font-semibold">Rs-${item.productPrice}</h1>
-                                <button class="btn btn-sm bg-[#F000B8] text-white border-[#F000B8] btn-primary">See more</button>
+                                <h1 class="text-lg font-semibold">Rs ${item.productPrice}</h1>
+                                <button id="viewMoreBtn" class="btn btn-sm bg-[#F000B8] text-white border-[#F000B8] btn-primary">View</button>
                             </div>
                         </div>
                     </div>
         `
+    })
+    const viewMoreBtn = document.querySelectorAll('#viewMoreBtn');
+    viewMoreBtn.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            sendAdToLocalStorage(index);
+            window.location = "singlead.html";
+        })
     })
 }
 
@@ -77,4 +84,16 @@ function signOutFunc() {
     }).catch((error) => {
         alert("An error happened.");
     });
+}
+
+
+
+
+
+const viewMoreBtn = document.querySelector('#viewMoreBtn');
+
+
+
+function sendAdToLocalStorage(index) {
+    localStorage.setItem("singleAd", JSON.stringify(adArr[index]));
 }
