@@ -1,6 +1,26 @@
+import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+import { auth, db } from "../config.js";
+import { collection, query, where, getDocs, doc, setDoc, addDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 let sindgleAdArr = JSON.parse(localStorage.getItem('singleAd'));
 console.log(sindgleAdArr);
 const div = document.querySelector("#div");
+const pfp = document.querySelector("#pfp");
+let userDataArr = [];
+
+
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const q = query(collection(db, "user"), where("uid", "==", user.uid));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            userDataArr.push(doc.data());
+        });
+        pfp.src = userDataArr[0].pfp;
+    } else {
+
+    }
+});
+
 
 function renderAd() {
     div.innerHTML = `
@@ -20,7 +40,7 @@ function renderAd() {
                 <h1 class="text-[1.6rem] font-bold">${sindgleAdArr.productTitle}</h1>
             </div>
             <div class="flex rounded-2xl ad-data border-[1px] border-[#A1A1A1]">
-                <div class="max-w-64 flex items-center image-wrapper">
+                <div style="border-bottom-left-radius: 16px;border-top-left-radius: 16px;background-color: white;" class="max-w-64 flex items-center image-wrapper">
                     <img class="w-[100%] ad-image h-auto object-cover"
                         src="${sindgleAdArr.productPic}"
                         alt="${sindgleAdArr.productTitle}">
@@ -34,13 +54,13 @@ function renderAd() {
                         <p class="text-[1rem] font-semibold">${sindgleAdArr.productTitle}</p>
                         <p class="text-[0.9rem] mt-3 font-normal">${sindgleAdArr.productDescription}</p>
                     </div>
-                    <div class="bg-[#4C68FF] rounded-xl pad-1-rem items-center gap-4 flex mt-5 p-5">
+                    <div class="bg-[#ff9d40] rounded-xl pad-1-rem items-center gap-4 flex mt-5 p-5">
                         <div class="avatar">
                             <div class="w-20 avatar-in rounded-full">
                                 <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/original/default-avatar-icon-of-social-media-user-vector.jpg" />
                             </div>
                         </div>
-                        <div class="w-full text-white">
+                        <div class="w-full text-black">
                             <div class="flex items-center flex-wrap gap-2.5 justify-between">
                                 <div>
                                     <h1 class="font-semibold">${sindgleAdArr.sellerName}</h1>
@@ -54,13 +74,13 @@ function renderAd() {
                             <!-- add max width 28rem below -->
                             <div class="flex flex-wrap gap-2.5 max-w-[28rem] gap-2 mt-4">
                                 <button class="btn min-w-28 border-0 flex-1 text-white bg-[#2A2E37]"><i class="fa-solid fa-phone"></i> Call Now</button>
-                                <button class="btn min-w-28 border-0 flex-1 text-black bg-[#D9D9D9]"><i class="fa-regular fa-comment"></i> Chat</button>
+                                <button class="btn btn-chat min-w-28 border-0 flex-1 text-black bg-[#D9D9D9]"><i class="fa-regular fa-comment"></i> Chat</button>
                             </div>
                         </div>                        
                     </div>
                     <div class="flex wrap-at-428 mt-5 items-center justify-between">
                         <div class="max-w-80 w-full">
-                            <button class="btn bg-[#4C68FF] border-0 w-full text-white btn-wide">Wide</button>
+                            <button class="btn bg-[#ff9d40] border-0 w-full text-white btn-wide">Buy</button>
                         </div>
                         <div class="flex me-1 area-wrapper text-center items-center justify-end max-w-80 w-full gap-2">
                             <i class="fa-solid fa-location-dot"></i>

@@ -56,6 +56,7 @@ form.addEventListener("submit", async event => {
         sellerNumber: sellerNumber.value,
     });
     console.log("Document written with ID: ", adPost.id);
+    showSnackbar();
     btnPostad.innerHTML = `Post Now`
 })
 
@@ -101,4 +102,11 @@ async function uploadFile(file, userEmail) {
         console.error(error);
         throw error;
     }
+}
+
+
+function showSnackbar() {
+    var snackbar = document.getElementById("snackbar");
+    snackbar.className = "show";
+    setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
 }
