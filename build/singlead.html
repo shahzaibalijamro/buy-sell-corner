@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy/sell corner</title>
+    <link rel="stylesheet" href="./style/singlead.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-black">
+    <div class="navbar bg-[#ff9d40] bg-base-100 z-50">
+        <div class="flex-1">
+            <a href="index.html" class="btn btn-ghost text-white text-xl"><i style="font-size: 14px;" class="fa-solid mt-[0.3rem] fa-chevron-left"></i>Back to Home</a>
+        </div>
+        <div class="flex-none gap-2">
+            <div class="form-control">
+                <input type="text" placeholder="Search"
+                    class="input h-[2.6rem] bg-white input-bordered w-24 md:w-auto" />
+            </div>
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img id="pfp" alt="Tailwind CSS Navbar component"
+                            src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" />
+                    </div>
+                </div>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
+                    <li><a href="postad.html">Post an add</a></li>
+                    <li id="loginBtn"><a href="login.html">Login</a></li>
+                    <li id="logoutBtn"><a>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="my-container pad-1-rem p-[1.5rem]">
+        <div id="div" class="bg-[#ff7d001f] pad-1-5-rem p-[2.25rem] my-box-shadow w-[100%]">
+            
+        </div>
+    </div>
+    <script type="module" src="./app/singlead.js"></script>
+    <script src="https://kit.fontawesome.com/e686848577.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

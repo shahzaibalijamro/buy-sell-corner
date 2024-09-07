@@ -108,45 +108,6 @@ input:hover {
     }
 }
 
-/* Adjust font sizes for smartphone display */
-@media (max-width: 600px) {
-    .text-[1.6rem] {
-        font-size: 1.2rem !important; /* Reduce title font size */
-    }
-
-    .text-[1.5rem] {
-        font-size: 1.1rem !important; /* Reduce 'Details' and 'Description' font size */
-    }
-
-    .text-[1rem] {
-        font-size: 0.85rem !important; /* Reduce product title font size */
-    }
-
-    .text-[0.9rem] {
-        font-size: 0.75rem !important; /* Reduce product description font size */
-    }
-
-    .font-bold {
-        font-size: 1rem !important; /* Reduce bold text size (e.g., price, seller name) */
-    }
-
-    .font-normal {
-        font-size: 0.9rem !important; /* Reduce normal text size */
-    }
-
-    .text-[20px] {
-        font-size: 0.9rem !important; /* Adjust text size for product details */
-    }
-
-    /* Adjust input placeholder text size */
-    .input-search::placeholder {
-        font-size: 0.85rem !important;
-    }
-}
-
-
-
-
 @media(max-width:448px){
     .wrap-at-428{
         flex-wrap: wrap;
