@@ -227,3 +227,11 @@ input:hover {
         opacity: 0;
     }
 }
+
+
+
+@media(max-width:600px){
+    .my-box-shadow{
+        padding: 1.3rem !important;
+    }
+}

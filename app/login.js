@@ -1,11 +1,18 @@
+//  Import Section
 import { signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import { auth } from "../config.js";
 
+
+
+// constant variables
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const forgotPassword = document.querySelector('#forgotPassword');
 const form = document.querySelector('#form');
 
+
+
+// signs users in
 form.addEventListener('submit', event => {
     event.preventDefault();
     onAuthStateChanged(auth, (user) => {
@@ -25,6 +32,11 @@ form.addEventListener('submit', event => {
     });
 })
 
+
+
+
+
+// forgot password functionality
 forgotPassword.addEventListener('click', (event)=>{
     event.preventDefault();
     forgotPasswordFunc();

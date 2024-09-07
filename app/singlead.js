@@ -1,13 +1,24 @@
+//  Import Section
 import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import { auth, db } from "../config.js";
 import { collection, query, where, getDocs, doc, setDoc, addDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+
+
+// getting data of the clicked ad from local storage
 let sindgleAdArr = JSON.parse(localStorage.getItem('singleAd'));
-console.log(sindgleAdArr);
+
+
+
+//constants and variables
 const div = document.querySelector("#div");
 const pfp = document.querySelector("#pfp");
 let userDataArr = [];
 
 
+
+
+// checking user status
 onAuthStateChanged(auth, async (user) => {
     if (user) {
         const q = query(collection(db, "user"), where("uid", "==", user.uid));
@@ -22,6 +33,9 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 
+
+
+// rendering ad
 function renderAd() {
     div.innerHTML = `
     <div class="flex justify-center">
