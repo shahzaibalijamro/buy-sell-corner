@@ -92,17 +92,17 @@ function renderAd() {
             <div class="rounded-2xl mt-[3rem] pad-1-rem p-5 border-[1px] border-[#A1A1A1]">
                 <p class="text-[1.5rem] font-bold">Details</p>
                 <div class="flex py-3 flex-wrap gap-y-[0.75rem] gap-x-[2.5rem]">
-                    <div class="flex gap-4">
+                    <div class="flex items-center gap-4">
                         <p class="font-normal text-[20px]">Is Deliverable</p>
                         <p class="font-bold text-[20px]">NO</p>
                     </div>
-                    <div class="flex gap-4">
+                    <div class="flex items-center gap-4">
                         <p class="font-normal text-[20px]">Brand</p>
                         <p class="font-bold text-[20px]">Not described</p>
-                    </div><div class="flex gap-4">
+                    </div><div class="flex items-center gap-4">
                         <p class="font-normal text-[20px]">Price</p>
                         <p class="font-bold text-[20px]">Rs ${sindgleAdArr.productPrice}</p>
-                    </div><div class="flex gap-4">
+                    </div><div class="flex items-center gap-4">
                         <p class="font-normal text-[20px]">Condition</p>
                         <p class="font-bold text-[20px]">Used</p>
                     </div>

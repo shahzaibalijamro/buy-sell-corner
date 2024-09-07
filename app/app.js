@@ -63,14 +63,14 @@ function renderData() {
     if (adArr.length > 0) {
       adArr.map((item, index) => {
           cardWrapper.innerHTML += `
-          <div class="relative flex w-64 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+          <div id="viewMoreBtn" class="relative cursor-pointer flex w-64 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
     <div class="relative mx-4 mt-4 h-[12rem] overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
       <img
         src=${item.productPic} alt="${item.productTitle}"
         class="h-full w-full object-cover"
       />
     </div>
-    <div style="height:130px;" class="px-5 py-4">
+    <div style="height:130px;" class="px-5 cursor-auto py-4">
       <div class="mb-2">
         <p class="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
         ${item.productTitle}
@@ -88,7 +88,7 @@ function renderData() {
       </p>
     </div>
     <div class="p-6 pb-2 pt-0">
-      <button id="viewMoreBtn"
+      <button
         class="block pt-0 w-full select-none rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         type="button"
       >
