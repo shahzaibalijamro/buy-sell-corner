@@ -38,7 +38,7 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 
-
+// post ad
 form.addEventListener("submit", async event => {
     event.preventDefault();
     btnPostad.innerHTML = `posting <span class="loading loading-dots loading-md"></span>`
@@ -105,6 +105,9 @@ async function uploadFile(file, userEmail) {
 }
 
 
+
+
+// confirmation of ad posting
 function showSnackbar() {
     var snackbar = document.getElementById("snackbar");
     snackbar.className = "show";

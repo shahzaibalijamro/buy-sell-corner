@@ -1,7 +1,13 @@
+//  Import Section
 import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import { auth, db } from "../config.js";
 import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
+
+
+
+
+//all variables
 const logoutBtn = document.querySelector("#logoutBtn");
 const inputSearch = document.querySelector(".input-search");
 const loginBtn = document.querySelector("#loginBtn");
@@ -9,6 +15,12 @@ const pfp = document.querySelector("#pfp");
 let userDataArr = [];
 let adArr = [];
 const cardWrapper = document.querySelector('.card-wrapper');
+const viewMoreBtn = document.querySelector('#viewMoreBtn');
+
+
+
+
+//search ads functionality
 inputSearch.addEventListener('input', () => {
   const searchValue = inputSearch.value.toLowerCase();
   const filteredArr = adArr.filter(item => {
@@ -19,6 +31,12 @@ inputSearch.addEventListener('input', () => {
   renderFilteredData(filteredArr);
 });
 
+
+
+
+
+
+// getting data from firestore database
 async function getData() {
   cardWrapper.innerHTML = `
   <div class="flex items-center justify-center gap-x-12">
@@ -58,6 +76,15 @@ async function getData() {
 getData();
 
 
+
+
+
+// sending clicked ad's data to local storage
+function sendAdToLocalStorage(index) {
+  localStorage.setItem("singleAd", JSON.stringify(adArr[index]));
+}
+
+//rendering data
 function renderData() {
     cardWrapper.innerHTML = "";
     if (adArr.length > 0) {
@@ -113,6 +140,10 @@ function renderData() {
 }
 
 
+
+
+
+// setting navbar based on user's state
 function navbarSet() {
     onAuthStateChanged(auth, async (user) => {
         if (user) {
@@ -133,13 +164,13 @@ navbarSet();
 
 
 
+
+
+// logout functionality
 logoutBtn.addEventListener("click", event => {
     event.preventDefault();
     signOutFunc();
 })
-
-
-
 
 function signOutFunc() {
     signOut(auth).then(() => {
@@ -154,18 +185,13 @@ function signOutFunc() {
 
 
 
-const viewMoreBtn = document.querySelector('#viewMoreBtn');
-
-
-
-function sendAdToLocalStorage(index) {
-    localStorage.setItem("singleAd", JSON.stringify(adArr[index]));
+// sending data of clicked ad's that are searched to local storage
+function sendSearchedAdToLocalStorage(index) {
+  localStorage.setItem("singleAd", JSON.stringify(filteredArr[index]));
 }
-
 
 function renderFilteredData(filteredArr) {
   cardWrapper.innerHTML = "";
-
   if (filteredArr.length > 0) {
     filteredArr.map((item, index) => {
       cardWrapper.innerHTML += `
@@ -216,9 +242,4 @@ function renderFilteredData(filteredArr) {
       <h1 class="text-xl font-semibold text-black mb-[1.4rem]">No ads found...</h1>
     </div>`;
   }
-}
-
-// Function to Send Data to Local Storage
-function sendSearchedAdToLocalStorage(index) {
-  localStorage.setItem("singleAd", JSON.stringify(filteredArr[index]));
 }
